@@ -1,0 +1,15 @@
+{
+    "type": "postgres",
+    "host": "container.ll-ap.cn",
+    "port": 5432,
+    "username": "postgres",
+    "password": "",
+    "database": "benchmark",
+    "entities": ["src/**/*.entity{.ts,.js}"],
+    "synchronize": true,
+    "extra": {
+        "max": 15,
+        "idleTimeoutMillis": 30000,
+        "connectionTimeoutMillis": 15000
+    }
+}
