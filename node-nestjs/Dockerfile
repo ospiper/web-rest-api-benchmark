@@ -3,7 +3,7 @@ FROM keymetrics/pm2:latest
 COPY ./* ./
 
 # Install app dependencies
-RUN npm install --registry=https://registry.npm.taobao.org
+RUN npm install
 RUN npm run build
 # RUN pm2 install pm2-webshell
 # RUN pm2 conf pm2-webshell:username admin
