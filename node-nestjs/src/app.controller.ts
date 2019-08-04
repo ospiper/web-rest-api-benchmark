@@ -1,8 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { createQueryBuilder, getManager, getRepository } from 'typeorm';
-import { User } from './entity/user.entity';
-import { Country } from './entity/country.entity';
 
 @Controller()
 export class AppController {
@@ -32,18 +29,4 @@ export class AppController {
     return {data};
   }
 
-  @Get('users')
-  async getUsers() {
-    // const countryQuery = getRepository(Country).createQueryBuilder('country');
-    const query = getRepository(User).createQueryBuilder('user');
-    const users = query.innerJoin(
-      'user.countries',
-      'country_temp',
-      'country_temp.countryName = :name',
-      {name: 'France'},
-    )
-      .leftJoinAndSelect('user.countries', 'country')
-      .getMany();
-    return users;
-  }
 }
