@@ -9,7 +9,7 @@ import { User } from './entity/user.entity';
   imports: [
     TypeOrmModule.forRoot({
         type: 'postgres',
-        host: '150.95.180.17',
+        host: '10.2.2.2',
         port: 5432,
         username: 'postgres',
         password: '',
@@ -19,7 +19,7 @@ import { User } from './entity/user.entity';
         extra: {
           max: 15,
           idleTimeoutMillis: 30000,
-          connectionTimeoutMillis: 15000
+          connectionTimeoutMillis: 15000,
         },
       },
     ),
